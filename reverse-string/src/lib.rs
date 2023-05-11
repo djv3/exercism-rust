@@ -1,7 +1,7 @@
+use unicode_reverse::reverse_grapheme_clusters_in_place;
+
 pub fn reverse(input: &str) -> String {
-    let mut result = String::new();
-    for char in input.chars() {
-        result.insert(0, char)
-    }
-    result
+    let mut mut_in = input.to_string();
+    reverse_grapheme_clusters_in_place(&mut mut_in);
+    mut_in
 }
